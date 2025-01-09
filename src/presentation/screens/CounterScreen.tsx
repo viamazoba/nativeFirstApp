@@ -1,5 +1,6 @@
 import { useState } from 'react';
-import { Platform, Pressable, StyleSheet, Text, View } from 'react-native';
+import { StyleSheet, Text, View } from 'react-native';
+import { PrimaryButton } from '../components';
 
 
 export const CounterScreen = () => {
@@ -9,15 +10,11 @@ export const CounterScreen = () => {
     return (
         <View style={style.container}>
             <Text style={style.title}>{value}</Text>
-            <Pressable onPress={() => setValue(prev => prev + 1)}
-                onLongPress={() => setValue(0)}
-                style={({ pressed }) => [
-                    style.button,
-                    pressed && style.pressedButton,
-                ]}
-            >
-                <Text style={style.textButton}>Incrementar</Text>
-            </Pressable>
+            <PrimaryButton
+                label="Incrementar"
+                onPressed={() => setValue(prev => prev + 1)}
+                onLongPressed={() => setValue(0)}
+            />
         </View>
     );
 };
@@ -33,17 +30,5 @@ const style = StyleSheet.create({
         fontSize: 80,
         color: 'black',
         fontWeight: '300',
-    },
-    button: {
-        backgroundColor: Platform.OS === 'android' ? '#e63946' : '#778da9',
-        borderRadius: 5,
-        padding: 10,
-    },
-    pressedButton: {
-        backgroundColor: Platform.OS === 'android' ? '#c1121f' : '#415a77',
-    },
-    textButton: {
-        fontSize: 16,
-        color: 'white',
     },
 });
