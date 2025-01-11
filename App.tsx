@@ -1,18 +1,22 @@
+/* eslint-disable react/no-unstable-nested-components */
 /* eslint-disable react-native/no-inline-styles */
 import { SafeAreaView } from 'react-native';
-/* import { HelloWordScreen } from './src/presentation/screens/HelloWorldScreen'; */
-import { CounterScreen } from './src/presentation/screens/CounterScreen';
 import { PaperProvider } from 'react-native-paper';
+import { CounterM3Screen } from './src/presentation/screens/CounterM3Screen';
+import IonIcons from '@react-native-vector-icons/ionicons';
 
 
 
 export const App = () => {
 
   return (
-    <PaperProvider>
+    <PaperProvider
+      settings={{
+        icon: (props) => <IonIcons name={props.name} size={props.size} color={props.color} />,
+      }}
+    >
       <SafeAreaView style={{ flex: 1 }}>
-        {/* <HelloWordScreen name="France" /> */}
-        <CounterScreen />
+        <CounterM3Screen />
       </SafeAreaView>
     </PaperProvider>
   );
