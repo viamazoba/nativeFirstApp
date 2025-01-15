@@ -4,8 +4,9 @@ import { SafeAreaView } from 'react-native';
 import { PaperProvider } from 'react-native-paper';
 /* import { CounterM3Screen } from './src/presentation/screens/CounterM3Screen'; */
 import IonIcons from '@react-native-vector-icons/ionicons';
-import { BoxObjectModelScreen } from './src/presentation/screens/BoxObjectModelScreen';
-import { PositionScreen } from './src/presentation/screens/PositionScreen';
+import { FlexScreen } from './src/presentation/screens/FlexScreen';
+/* import { BoxObjectModelScreen } from './src/presentation/screens/BoxObjectModelScreen'; */
+/* import { PositionScreen } from './src/presentation/screens/PositionScreen'; */
 
 
 
@@ -20,7 +21,8 @@ export const App = () => {
       <SafeAreaView style={{ flex: 1 }}>
         {/* <CounterM3Screen /> */}
         {/* <BoxObjectModelScreen /> */}
-        <PositionScreen />
+        {/*  <PositionScreen /> */}
+        <FlexScreen />
       </SafeAreaView>
     </PaperProvider>
   );
